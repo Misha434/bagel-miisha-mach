@@ -2,18 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // custom loader for cloudflare
-const normalizeSrc = (src) => {
-  return src[0] === "/" ? src.slice(1) : src;
-};
-
 const cloudflareLoader = ({ src, width, quality }) => {
-  const params = [`width=${width}`];
-  if (quality) {
-    params.push(`quality=${quality}`);
-  }
-  const paramsString = params.join(",");
-  return `/${paramsString}/${normalizeSrc(src)}`;
-};
+  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+}
 
 import fs from 'fs'
 import path from 'path'
