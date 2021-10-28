@@ -1,6 +1,5 @@
 module.exports = {
   images: {
-    loader: 'custom',
-    path: '/'
+    loader: 'custom'
   },
 }

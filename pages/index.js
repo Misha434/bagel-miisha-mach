@@ -12,7 +12,7 @@ const cloudflareLoader = ({ src, width, quality }) => {
     params.push(`quality=${quality}`);
   }
   const paramsString = params.join(",");
-  return `/cdn-cgi/image/${paramsString}/${normalizeSrc(src)}`;
+  return `/${paramsString}/${normalizeSrc(src)}`;
 };
 
 import fs from 'fs'
