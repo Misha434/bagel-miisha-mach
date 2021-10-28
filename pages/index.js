@@ -1,6 +1,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+// custom loader for cloudflare
+const normalizeSrc = (src) => {
+  return src[0] === "/" ? src.slice(1) : src;
+};
+
+const cloudflareLoader = ({ src, width, quality }) => {
+  const params = [`width=${width}`];
+  if (quality) {
+    params.push(`quality=${quality}`);
+  }
+  const paramsString = params.join(",");
+  return `/cdn-cgi/image/${paramsString}/${normalizeSrc(src)}`;
+};
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -24,6 +38,7 @@ export default function Home({ posts }) {
               </div>
               <div className="col-md-4 m-auto">
                 <Image
+                  loader={cloudflareLoader}
                   src={post.frontMatter.thumbnailUrl}
                   className="img-fluid mt-1 rounded-start"
                   alt="thumbnail"
