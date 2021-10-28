@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Next and MDX Blog</title>
+        <title>Bagel Miisha Mach</title>
       </Head>
       <div className="container">
         <Nav />

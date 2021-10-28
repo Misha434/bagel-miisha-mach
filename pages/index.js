@@ -1,3 +1,5 @@
+import 'tailwindcss/tailwind.css'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -13,35 +15,37 @@ import matter from 'gray-matter'
 
 export default function Home({ posts }) {
   return (
-    <div className="mt-5">
-      {posts.map((post, index) => (
-        <Link href={'/blog/' + post.slug} passHref key={index}>
-          <div className="card mb-3 pointer" style={{ maxWidth: '540px' }}>
-            <div className="row g-0">
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">{post.frontMatter.title}</h5>
-                  <p className="card-text">{post.frontMatter.description}</p>
-                  <p className="card-text">
-                    <small className="text-muted">{post.frontMatter.date}</small>
-                  </p>
+    <div>
+      <ol className="grid grid-cols-1 gap-4">
+        {posts.map((post, index) => (
+          <li>
+            <div className="shadow-sm bg-white rounded-lg h-18">
+              <Link href={'/blog/' + post.slug} passHref key={index}>
+                <div className="row g-0">
+                  <div className="col-md-8">
+                    <h1 className="text-3xl">{post.frontMatter.title}</h1>
+                    <p>{post.frontMatter.description}</p>
+                    <p>
+                      <small className="text-muted">{post.frontMatter.date}</small>
+                    </p>
+                  </div>
+                  <div className="col-md-4 m-auto">
+                    <Image
+                      loader={cloudflareImageLoader}
+                      src={post.frontMatter.thumbnailUrl}
+                      className="img-fluid mt-1 rounded-start"
+                      alt="thumbnail"
+                      width={500}
+                      height={400}
+                      objectFit="cover"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="col-md-4 m-auto">
-                <Image
-                  loader={cloudflareImageLoader}
-                  src={post.frontMatter.thumbnailUrl}
-                  className="img-fluid mt-1 rounded-start"
-                  alt="thumbnail"
-                  width={500}
-                  height={400}
-                  objectFit="cover"
-                />
-              </div>
+              </Link>
             </div>
-          </div>
-        </Link>
-      ))}
+          </li>
+        ))}
+      </ol>
     </div>
   )
 }
