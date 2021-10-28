@@ -2,8 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // custom loader for cloudflare
-const cloudflareLoader = ({ src, width, quality }) => {
-  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+const cloudflareImageLoader = ({ src, width, quality }) => {
+  if (!quality) {
+    quality = 75
+  }
+  return `https://images.bagel-miisha-mach.workers.dev?width=${width}&quality=${quality}&image=https://bagel-miisha-mach${src}`
 }
 
 import fs from 'fs'
@@ -29,7 +32,7 @@ export default function Home({ posts }) {
               </div>
               <div className="col-md-4 m-auto">
                 <Image
-                  loader={cloudflareLoader}
+                  loader={cloudflareImageLoader}
                   src={post.frontMatter.thumbnailUrl}
                   className="img-fluid mt-1 rounded-start"
                   alt="thumbnail"
