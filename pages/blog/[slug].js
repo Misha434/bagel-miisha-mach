@@ -5,7 +5,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
-import Button from '../../components/Button.jsx'
+import Button from '../../components/Button'
 
 export const getStaticPaths = async () => {
   const files = fs.readdirSync(path.join('posts'))
