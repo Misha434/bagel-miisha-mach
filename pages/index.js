@@ -3,10 +3,7 @@ import Image from 'next/image'
 
 // custom loader for cloudflare
 const cloudflareImageLoader = ({ src, width, quality }) => {
-  if (!quality) {
-    quality = 75
-  }
-  return `https://images.bagel-miisha-mach.workers.dev?width=${width}&quality=${quality}&image=https://bagel-miisha-mach${src}`
+  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
 }
 
 import fs from 'fs'
