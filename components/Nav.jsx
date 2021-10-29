@@ -1,14 +1,6 @@
 import Link from 'next/link'
 const Nav = () => {
   return (
-    // <nav className="nav p-3 border-bottom">
-    //   <Link href="/" passHref>
-    //     <h2 className="pointer">Ebenezer Don</h2>
-    //   </Link>
-    //   <Link href="/bio" passHref>
-    //     <p className="ms-5 pointer lead my-auto">Bio</p>
-    //   </Link>
-    // </nav>
     <>
       <nav className="flex items-center justify-between flex-wrap bg-green-500 p-6">
         <Link href="/" passHref>
@@ -33,7 +25,7 @@ const Nav = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              <path className="text-white" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
         </div>
