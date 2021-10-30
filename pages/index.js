@@ -16,7 +16,7 @@ import matter from 'gray-matter'
 export default function Home({ posts }) {
   return (
     <div>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 leading-loose">
         {posts.map((post, index) => (
           <div className="shadow-sm bg-white rounded-lg h-18">
             <Link href={'/blog/' + post.slug} passHref key={index}>
