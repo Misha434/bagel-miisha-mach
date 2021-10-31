@@ -9,12 +9,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Bagel Miisha Mach</title>
       </Head>
-      <div className="container">
-        <Nav />
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <Nav />
+      <main>
+        <Component {...pageProps} />
+      </main>
     </>
   )
 }
