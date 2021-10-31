@@ -16,13 +16,13 @@ import matter from 'gray-matter'
 export default function Home({ posts }) {
   return (
     <div>
-      <div className="grid grid-cols-1 gap-4 leading-loose">
+      <div className="grid grid-cols-1 gap-4 text-gray-500 m-6">
         {posts.map((post, index) => (
           <div className="shadow-sm bg-white rounded-lg h-18">
             <Link href={'/blog/' + post.slug} passHref key={index}>
               <div className="row g-0">
                 <div className="col-md-8">
-                  <h1 className="text-3xl">{post.frontMatter.title}</h1>
+                  <h1 className="text-3xl text-gray-700">{post.frontMatter.title}</h1>
                   <p>{post.frontMatter.description}</p>
                   <p>
                     <small className="text-muted">{post.frontMatter.date}</small>
