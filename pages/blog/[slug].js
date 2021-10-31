@@ -36,8 +36,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
 const PostPage = ({ frontMatter: { title }, mdxSource }) => {
   return (
-    <div className="m-6 text-gray-500">
-      <h1 className="text-4xl mb-10 text-gray-700">{title}</h1>
+    <div className="m-6 text-gray-600">
+      <h1 className="text-4xl mb-10 text-gray-800 font-bold">{title}</h1>
       <div className="leading-loose pb-5">
         <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter }} />
       </div>

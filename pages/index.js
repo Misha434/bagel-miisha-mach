@@ -18,27 +18,27 @@ export default function Home({ posts }) {
     <div>
       <div className="grid grid-cols-1 gap-4 text-gray-500 m-6">
         {posts.map((post, index) => (
-          <div className="shadow-sm bg-white rounded-lg h-18">
+          <div className="border-t-2 bg-white h-18 pb-3">
             <Link href={'/blog/' + post.slug} passHref key={index}>
               <div className="row g-0">
                 <div className="col-md-8">
-                  <h1 className="text-3xl text-gray-700">{post.frontMatter.title}</h1>
-                  <p>{post.frontMatter.description}</p>
-                  <p>
+                  <p className="mt-4">
                     <small className="text-muted">{post.frontMatter.date}</small>
                   </p>
+                  <h1 className="text-3xl text-gray-700 mb-4 font-bold">{post.frontMatter.title}</h1>
                 </div>
-                <div className="col-md-4 m-auto">
+                <div className="col-md-4 float-left mr-5">
                   <Image
                     loader={cloudflareImageLoader}
                     src={post.frontMatter.thumbnailUrl}
-                    className="img-fluid mt-1 rounded-start"
+                    className="img-fluid m-5 rounded-start float-left"
                     alt="thumbnail"
-                    width={500}
-                    height={400}
+                    width={200}
+                    height={150}
                     objectFit="cover"
-                  />
+                    />
                 </div>
+                <p>{post.frontMatter.description}</p>
               </div>
             </Link>
           </div>

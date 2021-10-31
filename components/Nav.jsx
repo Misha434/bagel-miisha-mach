@@ -2,7 +2,7 @@ import Link from 'next/link'
 const Nav = () => {
   return (
     <>
-      <nav className="flex items-center justify-between flex-wrap bg-green-500 p-6">
+      <nav className="flex items-center justify-between flex-wrap bg-gradient-to-r from-blue-400 to-green-300 p-6">
         <Link href="/" passHref>
           <div className="flex items-center flex-shrink-0 text-white mr-6">
             <svg
