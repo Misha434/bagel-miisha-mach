@@ -44,15 +44,15 @@ const PostPage = ({ frontMatter: { title, date, tags }, mdxSource }) => {
       <div className="text-gray-400 md-10">
         <div className={tags}>Tags:
           {!Array.isArray(tags) ? (
-              <Link href={`/tags/${encodeURIComponent(tag)}`}>
-                <a className={tag}>{tag}</a>
-              </Link>
+            <Link href={`/tags/${encodeURIComponent(tag)}`}>
+              <a className={tag}>{tag}</a>
+            </Link>
           ) : (
-              tags.map((tag) => (
-                  <Link href={`/tags/${encodeURIComponent(tag)}`}>
-                    <a className={tag}>{tag} </a>
-                  </Link>
-              ))
+            tags.map((tag) => (
+              <Link href={`/tags/${encodeURIComponent(tag)}`}>
+                <a className={tag}>{tag} </a>
+              </Link>
+            ))
           )}
         </div>
       </div>

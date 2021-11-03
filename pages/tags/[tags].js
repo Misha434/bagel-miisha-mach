@@ -8,7 +8,7 @@ import styles from "../../components/layout.module.css";
 
 export default function TagsPosts({ postData,tag }) {
   return (
-    <Layout tags>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -35,8 +35,8 @@ export default function TagsPosts({ postData,tag }) {
           <a>← Back to Tags</a>
         </Link>
       </div>
-    </Layout>
-  );
+    </>
+  )
 }
 
 export async function getStaticPaths() {
