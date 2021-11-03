@@ -41,22 +41,6 @@ const PostPage = ({ frontMatter: { title, date, tags }, mdxSource }) => {
     <div className="m-6 text-gray-600">
       <p className="text-md text-gray-400">{date}</p>
       <h1 className="text-4xl text-gray-800 font-bold">{title}</h1>
-      <div className="text-gray-400 md-10">
-        <div className={tags}>Tags:
-          {!Array.isArray(tags) ? (
-            <Link href={`/tags/${encodeURIComponent(tag)}`}>
-              <a className={tag}>{tag}</a>
-            </Link>
-          ) : (
-            tags.map((tag) => (
-              <Link href={`/tags/${encodeURIComponent(tag)}`}>
-                <a className={tag}>{tag} </a>
-              </Link>
-            ))
-          )}
-        </div>
-      </div>
-
       <div className="leading-loose pb-5">
         <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter }} />
       </div>
