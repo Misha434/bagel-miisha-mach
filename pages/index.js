@@ -25,9 +25,9 @@ export default function Home({ posts }) {
                   <p className="mt-4">
                     <small className="text-muted">{post.frontMatter.date}</small>
                   </p>
-                  <h1 className="text-3xl text-gray-700 mb-4 font-bold">{post.frontMatter.title}</h1>
+                  <h1 className="text-3xl text-gray-700 mb-4 font-bold  cursor-pointer">{post.frontMatter.title}</h1>
                 </div>
-                <div className="col-md-4 float-left mr-5">
+                <div className="col-md-4 float-left mr-5 cursor-pointer">
                   <Image
                     loader={cloudflareImageLoader}
                     src={post.frontMatter.thumbnailUrl}
