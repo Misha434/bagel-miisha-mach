@@ -7,8 +7,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 
 import Button from '../../components/Button'
 
-import Link from 'next/link'
-
 export const getStaticPaths = async () => {
   const files = fs.readdirSync(path.join('posts'))
   const paths = files.map(filename => ({
