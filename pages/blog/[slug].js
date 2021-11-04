@@ -36,7 +36,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   }
 }
 
-const PostPage = ({ frontMatter: { title, date, tags }, mdxSource }) => {
+const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
   return (
     <div className="m-6 text-gray-600">
       <p className="text-md text-gray-400">{date}</p>
