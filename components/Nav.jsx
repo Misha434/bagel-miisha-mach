@@ -41,12 +41,12 @@ const Nav = ({ fixed }) => {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <Link href="/#" passHref>
                 <li className="nav-item p-3">
-                  <span className="text-white cursor-pointer">Tag</span>
+                  <span className="text-white cursor-pointer">Tag (Comming Soon)</span>
                 </li>
               </Link>
               <Link href="/#" passHref>
                 <li className="nav-item  p-3">
-                  <span className="text-white cursor-pointer">contact</span>
+                  <span className="text-white cursor-pointer">contact (Comming Soon)</span>
                 </li>
               </Link>
               
