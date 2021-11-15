@@ -14,7 +14,9 @@ import matter from 'gray-matter'
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <>
+      <h3 className="text-center mt-12">ベーグル・ミーシャ・マッハ</h3>
+      <p className="text-center mt-4 mb-12 text-gray-500">Web開発に関するメモなど</p>
       <div className="grid grid-cols-1 gap-4 text-gray-500 m-6">
         {posts.map((post, index) => (
           <div className="border-t-2 bg-white h-18 pb-3">
@@ -32,10 +34,10 @@ export default function Home({ posts }) {
                     src={post.frontMatter.thumbnailUrl}
                     className="img-fluid m-5 rounded-start float-left"
                     alt="thumbnail"
-                    width={200}
-                    height={150}
+                    width={150}
+                    height={100}
                     objectFit="cover"
-                    />
+                  />
                 </div>
                 <p>{post.frontMatter.description}</p>
               </div>
@@ -43,7 +45,7 @@ export default function Home({ posts }) {
           </div>
         ))}
       </div>
-    </div>
+    </>
   )
 }
 
