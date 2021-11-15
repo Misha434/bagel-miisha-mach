@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link'
 
-const Nav = ({ fixed }) => {
+const Nav = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
@@ -31,12 +31,12 @@ const Nav = ({ fixed }) => {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <Link href="/#" passHref>
-                <li className="nav-item p-3">
+                <li className="nav-item p-3" key="1">
                   <span className="text-white cursor-pointer">Tag (Comming Soon)</span>
                 </li>
               </Link>
               <Link href="/#" passHref>
-                <li className="nav-item  p-3">
+                <li className="nav-item  p-3" key="2">
                   <span className="text-white cursor-pointer">contact (Comming Soon)</span>
                 </li>
               </Link>
