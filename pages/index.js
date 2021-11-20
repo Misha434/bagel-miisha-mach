@@ -19,8 +19,8 @@ export default function Home({ posts }) {
       <p className="text-center mt-4 mb-12 text-gray-500">Web開発に関するメモなど</p>
       <div className="grid grid-cols-1 gap-4 text-gray-500 m-6">
         {posts.map((post, index) => (
-          <div className="border-t-2 bg-white h-18 pb-3">
-            <Link href={'/blog/' + post.slug} passHref key={index}>
+          <div className="border-t-2 bg-white h-18 pb-3" key={index}>
+            <Link href={'/blog/' + post.slug} passHref>
               <div className="row g-0">
                 <div className="col-md-8">
                   <p className="mt-4">
